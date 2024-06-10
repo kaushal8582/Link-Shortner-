@@ -62,7 +62,7 @@ function MyState(props) {
         userId: user ? user : "1",
       });
 
-      let s = "https://link-shortner-vert-three.vercel.app/" + uniqueId;
+      let s = `${process.env.REACT_APP_BASE_URL}/${uniqueId}`;
       setLoader(false);
       setShortLink(s);
     } catch (error) {
