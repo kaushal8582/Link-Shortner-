@@ -33,7 +33,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/:id" element={< Linksredirect />} />
+            <Route path="https://link-shortner-vert-three.vercel.app/:id" element={< Linksredirect />} />
             <Route path="/about" element={<About />} />
             <Route path="/link" element={<Links />} />
             <Route path="/dashboard" element={user?<Dashboard />:<UserLogin/>} />
