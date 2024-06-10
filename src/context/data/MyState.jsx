@@ -62,7 +62,7 @@ function MyState(props) {
         userId: user ? user : "1",
       });
 
-      let s = "localhost:5173/" + uniqueId;
+      let s = "https://link-shortner-vert-three.vercel.app/" + uniqueId;
       setLoader(false);
       setShortLink(s);
     } catch (error) {
