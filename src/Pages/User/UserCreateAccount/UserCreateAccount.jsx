@@ -24,7 +24,6 @@ const UserCreateAccount = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     if(formData.name || formData.email || formData.mobile || formData.password){
-      console.log('Form Data:', formData);
       await createUserWithEmailAndPassword(auth,formData.email,formData.password).then( async(id)=>{
         await setDoc(doc(fireDb,"Users",id.user.uid),{...formData,id:id.user.uid})
         toast.success("account created");

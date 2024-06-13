@@ -48,6 +48,7 @@ function MyState(props) {
     let uniqueId = generateId();
     let linkRef = collection(fireDb, "Links");
 
+
     try {
       await addDoc(linkRef, {
         longLink: longLink,
@@ -61,8 +62,7 @@ function MyState(props) {
         count:0,
         userId: user ? user : "1",
       });
-
-      let s = `${process.env.REACT_APP_BASE_URL}/${uniqueId}`;
+      let s = `${import.meta.env.VITE_BASE_URL}/${uniqueId}`;
       setLoader(false);
       setShortLink(s);
     } catch (error) {
@@ -104,7 +104,6 @@ function MyState(props) {
         }
        });
        setSum(k);
-       console.log((k ,"k is"));
     }
   }
 

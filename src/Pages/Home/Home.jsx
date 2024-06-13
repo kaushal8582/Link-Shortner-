@@ -9,7 +9,6 @@ const Home = () => {
   const context = useContext(myContext);
   const { shortLinkgenerate, shortLink, setShortLink, copyLink, allLinks } = context;
 
-  console.log(allLinks);
 
   function generateLiks() {
     setShortLink('');

@@ -9,37 +9,26 @@ import { auth } from "../../../firebase/links";
 import { useNavigate } from "react-router-dom";
 
 const UserDashboard = () => {
-
-  const [sum ,setSum] = useState();
+  const [sum, setSum] = useState();
   const context = useContext(myContext);
   const navigate = useNavigate();
-  const { allLinks, setShortLink, setUser, userDetails  } = context;
+  const { allLinks, setShortLink, setUser, userDetails } = context;
 
-  
-
-  function sumOFAllLinkCount(){
+  function sumOFAllLinkCount() {
     let k = 0;
-    if(allLinks.length > 0){
+    if (allLinks.length > 0) {
       allLinks.forEach((link) => {
-        if(link.count){
+        if (link.count) {
           k += link.count;
         }
-       });
-
-       setSum(k);
-       console.log((k ,"k is"));
-       
+      });
+      setSum(k);
     }
   }
 
-  useEffect(()=>{
-    console.log(sum,"sum is");
-  },[])
-
-useEffect(()=>{
-  sumOFAllLinkCount();
-},[allLinks])
-  
+  useEffect(() => {
+    sumOFAllLinkCount();
+  }, [allLinks]);
 
   async function logout() {
     try {

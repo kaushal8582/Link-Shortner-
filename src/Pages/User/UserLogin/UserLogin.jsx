@@ -43,7 +43,6 @@ const UserLogin = () => {
         toast.error("error login");
       })
     }
-    console.log("Form Data:", formData);
   };
 
   return (

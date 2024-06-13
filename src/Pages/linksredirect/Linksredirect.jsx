@@ -30,7 +30,6 @@ const Linksredirect = () => {
         querysnapshot.forEach((docu) => {
           const linkData =docu.data();
           const docRef = doc(fireDb,"Links",docu.id);
-          console.log(docu.data());
           let validUlr = checkValidURL(docu.data().longLink);
           setLoad(false)
           updateDoc(docRef,{count:increment(1)});
