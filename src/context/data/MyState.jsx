@@ -63,7 +63,7 @@ function MyState(props) {
         userId: user ? user : "1",
       });
       console.log(import.meta.env.VITE_BASE_URL);
-      let s = `${import.meta.env.VITE_BASE_URL}/${uniqueId}`;
+      let s = `${import.meta.env.VITE_BASE_URL}${uniqueId}`;
       setLoader(false);
       setShortLink(s);
     } catch (error) {
