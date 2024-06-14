@@ -8,7 +8,7 @@ const Nav = () => {
   const context = useContext(myContext);
   const { user } = context;
   const [validate, setValidate] = useState(false);
-  const [left,setLeft] = useState("0%");
+  const [left,setLeft] = useState("-110%");
 
   useEffect(() => {
     if (user) {
@@ -17,6 +17,14 @@ const Nav = () => {
       setValidate(false);
     }
   }, [user]);
+
+  const onClose = ()=>{
+    setLeft("-110%")
+  }
+
+  const onOpen = ()=>{
+    setLeft("0%");
+  }
 
   return (
     <div className="rounded-lg h-[60px] w-full bg-[#222831] flex items-center justify-between px-5 md:px-9 text-white">
@@ -58,11 +66,11 @@ const Nav = () => {
       </div>
 
       <div className="block md:hidden">
-        <button onClick={()=>setLeft("0%")} id="menu-btn" className="text-white">
+        <button onClick={onOpen} id="menu-btn" className="text-white">
           &#9776;
         </button >
       </div>
-      {/* <NavSlide  left={left} setLeft={setLeft}/> */}
+      <NavSlide  left={left} onClose = {onClose} />
     </div>
   );
 };
